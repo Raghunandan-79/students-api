@@ -101,7 +101,7 @@ http_server:
 2. Get Student by ID:
 
    - Method: GET
-   - URL: `/api/students/{id}`
+   - URL: `/api/students/id`
 
 3. Get All Students:
 
@@ -111,7 +111,7 @@ http_server:
 4. Update Student by ID:
 
     - Method: PUT
-    - URL: `/api/students/update/{id}`
+    - URL: `/api/students/update/id`
     - Body:
     ```json
     {
@@ -123,7 +123,7 @@ http_server:
 
 5. Delete Student by ID:
     - Method: DELETE
-    - URL: `/api/students/deleteById/{id}`
+    - URL: `/api/students/deleteById/id`
 
 ## Database
 
