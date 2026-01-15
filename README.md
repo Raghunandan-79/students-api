@@ -67,6 +67,8 @@ http_server:
   address: "localhost:8082"
 ```
 
+> Note: Ignored from git via .gitignore. This file is required to run the project. Create it manually.
+
 ## API Endpoints
 
 1. Create Student:
