@@ -51,8 +51,21 @@ students-api/
 ├── go.mod
 └── go.sum
 ```
+## Usage
+1. Clone the repository:
 
-## Running the Project
+```bash
+git clone https://github.com/Raghunandan-79/students-api.git
+cd students-api
+```
+
+2. Install dependencies:
+
+```bash
+go mod tidy
+```
+
+3. Running the Project
 
 ```bash
 go run ./cmd/students-api/main.go -config ./config/local.yaml
