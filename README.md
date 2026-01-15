@@ -77,10 +77,48 @@ http_server:
 
    ```json
     {
-     "name": "Raghu",
-     "email": "raghu@example.com",
-    "age": 21
+     "name": "test",
+     "email": "test@example.com",
+     "age": 21
     }
     ```
 
+2. Get Student by ID:
 
+   - Method: GET
+   - URL: `/api/students/{id}`
+
+3. Get All Students:
+
+    - Method: GET
+    - URL: `/api/students`
+
+4. Update Student by ID:
+
+    - Method: PUT
+    - URL: `/api/students/update/{id}`
+    - Body:
+    ```json
+    {
+     "name": "test Updated",
+     "email": "test.updated@example.com",
+     "age": 22
+    }
+    ```
+
+5. Delete Student by ID:
+    - Method: DELETE
+    - URL: `/api/students/deleteById/{id}`
+
+## Database
+
+Create a database file at `storage/storage.db` and run the project to auto-create the required tables.
+
+> Note: Ignored from git via .gitignore
+
+## Testing with Postman
+
+A Postman Collection can be created to test the above API endpoints.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
