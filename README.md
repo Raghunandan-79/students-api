@@ -69,16 +69,18 @@ http_server:
 
 ## API Endpoints
 
-1. Create Student
-POST /api/atudents
+1. Create Student:
 
-- Body:
+   - Method: POST
+   - URL: `/api/students/create`
+   - Body:
 
-```json
-{
-  "name": "Raghu",
-  "email": "raghu@example.com",
-  "age": 21
-}
-```
+   ```json
+    {
+     "name": "Raghu",
+     "email": "raghu@example.com",
+    "age": 21
+    }
+    ```
+
 
