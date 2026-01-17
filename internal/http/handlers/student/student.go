@@ -34,6 +34,14 @@ func New(storage storage.Storage) http.HandlerFunc {
 			return
 		}
 
+		if exists, err := storage.CheckIfUserExists(student.Email); err != nil {
+			response.WriteJson(w, http.StatusInternalServerError, response.GeneralError(err))
+			return
+		} else if exists {
+			response.WriteJson(w, http.StatusBadRequest, response.GeneralError(fmt.Errorf("Student with email %s already exists", student.Email)))
+			return
+		}
+
 		// Request validation
 		if err := validator.New().Struct(student); err != nil {
 			validateErrs := err.(validator.ValidationErrors)

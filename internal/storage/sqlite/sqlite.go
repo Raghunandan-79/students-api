@@ -36,6 +36,28 @@ func New(cfg *config.Config) (*Sqlite, error) {
 	}, nil
 }
 
+func (s *Sqlite) CheckIfUserExists(email string) (bool, error) {
+	stmt, err := s.Db.Prepare("SELECT id FROM students WHERE email = ? LIMIT 1")
+	if err != nil {
+		return false, err
+	}
+
+	defer stmt.Close()
+
+	var id int64
+
+	err = stmt.QueryRow(email).Scan(&id)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return false, nil
+		}
+
+		return false, err
+	}
+
+	return true, nil
+}
+
 func (s *Sqlite) CreateStudent(name string, email string, age int) (int64, error) {
 	stmt, err := s.Db.Prepare("INSERT INTO students (name, email, age) VALUES (?, ?, ?)")
 
